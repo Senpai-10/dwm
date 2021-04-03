@@ -10,15 +10,20 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=11" };
 static const char dmenufont[]       = "monospace:size=11";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#cf302d";
+
+// colors
+static const char normal_fg[]       = "#bbbbbb";
+static const char normal_bg[]       = "#222222";
+static const char normal_border[]   = "#444444";
+
+static const char selected_fg[]     = "#eeeeee";
+static const char selected_bg[]     = "#cf302d";
+static const char selected_border[] = "#cf302d";
+
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/*               fg           bg            border   */
+	[SchemeNorm] = { normal_fg,   normal_bg,    normal_border },
+	[SchemeSel]  = { selected_fg, selected_bg,  selected_border  },
 };
 
 
@@ -62,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normal_bg, "-nf", normal_fg, "-sb", selected_bg, "-sf", selected_fg, NULL };
 static const char *termcmd[]  = { Terminal, NULL };
 
 static Key keys[] = {
