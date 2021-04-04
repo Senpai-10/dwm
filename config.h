@@ -17,7 +17,7 @@ static const char normal_bg[]       = "#222222";
 static const char normal_border[]   = "#444444";
 
 static const char selected_fg[]     = "#eeeeee";
-static const char selected_bg[]     = "#cf302d";
+static const char selected_bg[]     = "#2c2c2c";
 static const char selected_border[] = "#cf302d";
 
 static const char *colors[][3]      = {
